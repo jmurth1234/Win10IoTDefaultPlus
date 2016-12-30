@@ -1,7 +1,7 @@
 IoT Core Default App Plus
 ===============
 
-!(Screenshot of the app)[https://images.rymate.co.uk/images/pOKRF7Y.png]
+![Screenshot of the app](https://images.rymate.co.uk/images/pOKRF7Y.png)
 
 ## What is this?
 
