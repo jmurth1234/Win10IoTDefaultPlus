@@ -1,17 +1,30 @@
-Windows 10 IoT Core sample code
+IoT Core Default App Plus
 ===============
 
-[Documentation for this sample](https://developer.microsoft.com/en-us/windows/iot/samples/iotdefaultapp) 
+## What is this?
 
-## How to download:
+This is a fork of the default startup app on the Windows 10 IoT that adds an app 
+launcher as a SplitView, allowing the user to launch applications on the device.
 
-Unfortunately, GitHub does not support downloading individual code. 
+Other features might be added in the future, such as application uninstalling, 
+pinning the SplitView, and more!
 
-Navigate to [ms-iot/samples](https://github.com/ms-iot/samples) and select **Clone or download** to download the whole repository.
+## How to install?
 
+Clone this repository on a Windows computer with VS 2015 and all the necessary
+stuff for Windows 10 IoT installed. 
+
+Once downloaded, open the sln in Visual Studio, then deploy this app to your 
+remote device.
+
+You can also install this on your computer, however it's a bit pointless as it 
+just runs in a window.
+
+Note: I have tested this on the latest insider preview (Build 14986). No idea 
+whether it works on earlier builds.
 
 ## Additional resources
+* [Documentation for the MS example](https://developer.microsoft.com/en-us/windows/iot/samples/iotdefaultapp) 
+* [The original version of this project](https://github.com/ms-iot/samples/tree/develop/IoTCoreDefaultApp)
 * [Windows 10 IoT Core home page](https://developer.microsoft.com/en-us/windows/iot/)
-* [Documentation for all samples](https://developer.microsoft.com/en-us/windows/iot/samples)
 
-This project has adopted the Microsoft Open Source Code of Conduct. For more information see the Code of Conduct FAQ or contact opencode@microsoft.com with any additional questions or comments.
