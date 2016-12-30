@@ -1,6 +1,8 @@
 IoT Core Default App Plus
 ===============
 
+!(Screenshot of the app)[https://images.rymate.co.uk/images/pOKRF7Y.png]
+
 ## What is this?
 
 This is a fork of the default startup app on the Windows 10 IoT that adds an app 
