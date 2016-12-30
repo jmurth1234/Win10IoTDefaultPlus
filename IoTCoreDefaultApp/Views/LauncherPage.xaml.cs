@@ -46,7 +46,7 @@ namespace IoTCoreDefaultApp.Views
 
             PopulateAppsList();
 
-            this.Loaded += async (sender, e) =>
+            this.Loaded += (sender, e) =>
             {
                 UpdateDateTime();
 
@@ -96,7 +96,7 @@ namespace IoTCoreDefaultApp.Views
                     try
                     {
                         var info = task.DisplayInfo;
-                        var logo = info.GetLogo(new Size(150, 150));
+                        var logo = info.GetLogo(new Size(64, 64));
 
                         var item = new AppListItem
                         {
@@ -147,7 +147,12 @@ namespace IoTCoreDefaultApp.Views
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            CrappyStart.IsPaneOpen = !CrappyStart.IsPaneOpen;
+            CrappyStart.IsPaneOpen = StartButton.IsChecked.Value;
+        }
+
+        private void CrappyStart_PaneClosed(SplitView sender, object args)
+        {
+            StartButton.IsChecked = false;
         }
     }
 
