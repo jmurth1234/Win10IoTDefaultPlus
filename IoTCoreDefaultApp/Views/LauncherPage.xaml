@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="IoTCoreDefaultApp.Views.LauncherPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTCoreDefaultApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="48" />
+        </Grid.RowDefinitions>
+
+        <SplitView x:Name="CrappyStart">
+            <SplitView.Pane>
+                <ListView Name="appList" IsItemClickEnabled="True" ItemsSource="{x:Bind Path=AppItemList}" HorizontalAlignment="Center" ItemClick="appList_ItemClick" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Width="300" Margin="10">
+                                <Image Source="{Binding ImgSrc}" Width="50" Height="50" VerticalAlignment="Center" Margin="6"/>
+                                <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="6"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </SplitView.Pane>
+
+            <Frame Grid.Column="1" x:Name="SideFrame" />
+
+        </SplitView>
+        <!-- Header row -->
+        <Grid x:Name="HeaderRow" Grid.Row="1" Background="#2a2a2a">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Name="StartButton" Style="{StaticResource ShutdownButtonStyle}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="StartButton_Click">
+                Start
+            </Button>
+
+            <Button Grid.Column="1" x:Name="CortanaButton" Style="{StaticResource ShutdownButtonStyle}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="CortanaButton_Click">
+                Cortana
+            </Button>
+
+            <TextBlock Grid.Column="3" x:Name="CurrentTime" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource IoTCoreDefaultAppBodyTextBlockStyle}" VerticalAlignment="Center" Padding="0,0,14,0"/>
+
+        </Grid>
+    </Grid>
+</Page>
