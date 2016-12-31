@@ -130,6 +130,9 @@
     <Compile Include="Utils\NativeTimeMethods.cs" />
     <Compile Include="Utils\NavigationUtils.cs" />
     <Compile Include="Utils\WifiGlyphConverter.cs" />
+    <Compile Include="Views\BrowserPage.xaml.cs">
+      <DependentUpon>BrowserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CommandLinePage.xaml.cs">
       <DependentUpon>CommandLinePage.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,9 @@
     </Compile>
     <Compile Include="Views\OOBEWelcome.xaml.cs">
       <DependentUpon>OOBEWelcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PromptDialog.xaml.cs">
+      <DependentUpon>PromptDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Screensaver.xaml.cs">
       <DependentUpon>Screensaver.xaml</DependentUpon>
@@ -225,6 +231,10 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Views\BrowserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CommandLinePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -242,6 +252,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OOBEWelcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PromptDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

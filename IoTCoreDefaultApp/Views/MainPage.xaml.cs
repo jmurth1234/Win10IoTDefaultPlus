@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 
 using IoTCoreDefaultApp.Utils;
+using IoTCoreDefaultApp.Views;
 using System;
 using System.Globalization;
 using Windows.Networking.Connectivity;
@@ -131,7 +132,17 @@ namespace IoTCoreDefaultApp
 
         private void Tutorials_Clicked(object sender, RoutedEventArgs e)
         {
-            NavigationUtils.NavigateToScreen(typeof(TutorialMainPage));
+          NavigationUtils.NavigateToScreen(typeof(TutorialMainPage));
+        }
+
+        private void Browser_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationUtils.NavigateToScreen(typeof(BrowserPage));
+        }
+
+        private void DeviceManagement_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationUtils.NavigateToScreen(typeof(BrowserPage), "http://127.0.0.1:8080");
         }
 
         private void ShutdownHelper(ShutdownKind kind)
@@ -172,5 +183,6 @@ namespace IoTCoreDefaultApp
             var offset = -(ShutdownListView.ActualWidth - ShutdownButton.ActualWidth);
             ShutdownDropdown.HorizontalOffset = offset;
         }
+
     }
 }

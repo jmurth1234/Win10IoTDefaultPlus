@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="IoTCoreDefaultApp.Views.BrowserPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTCoreDefaultApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="BrowserView" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"  VerticalAlignment="Stretch" Background="#FF1D1D1D">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="48"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="Title" Grid.Column="0" Style="{ThemeResource TitleTextBlockStyle}" VerticalAlignment="Center"/>
+            <Button Grid.Column="1" x:Name="CloseButton" Content="{StaticResource IconClose}" Background="Transparent" BorderThickness="0" BorderBrush="Transparent"  FontFamily="{StaticResource IconFontFamily}" FontSize="12" Height="24" Width="48" VerticalAlignment="Center" Click="CloseButton_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="1" VerticalAlignment="Stretch" Background="#2a2a2a">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="48"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Name="BrowserBackButton" Content="{StaticResource IconBack}" Background="Transparent" BorderThickness="0" BorderBrush="Transparent"  FontFamily="{StaticResource IconFontFamily}" FontSize="24" Width="48" VerticalAlignment="Stretch" HorizontalAlignment="Right" Click="BrowserBackButton_Click"/>
+            <Button Grid.Column="1" x:Name="BrowserForwardButton" Content="{StaticResource IconForward}" Background="Transparent" BorderThickness="0" BorderBrush="Transparent"  FontFamily="{StaticResource IconFontFamily}" FontSize="24" Width="48" VerticalAlignment="Stretch" Click="BrowserForwardButton_Click"/>
+            <TextBox x:Name="UrlBar" Grid.Column="2" VerticalAlignment="Center" PlaceholderText="Enter a URL or Search..."/>
+
+            <Button Grid.Column="3" x:Name="BrowserGoButton" Content="{StaticResource IconRun}" Background="Transparent" BorderThickness="0" BorderBrush="Transparent"  FontFamily="{StaticResource IconFontFamily}" FontSize="24" Height="48" Width="48" VerticalAlignment="Bottom" Click="BrowserGoButton_Click"/>
+
+        </Grid>
+
+        <WebView x:Name="Browser"  Grid.Row="31" LoadCompleted="WebView_LoadCompleted" />
+    </Grid>
+</Page>

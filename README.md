@@ -8,8 +8,9 @@ IoT Core Default App Plus
 This is a fork of the default startup app on the Windows 10 IoT that adds an app 
 launcher as a SplitView, allowing the user to launch applications on the device.
 
-Other features might be added in the future, such as application uninstalling, 
-pinning the SplitView, and more!
+I've also added a built in browser feature, which additionally supports the 
+basic HTTP authentication needed to access the built in settings panel of Win10 
+IoT
 
 ## How to install?
 
@@ -22,8 +23,9 @@ remote device.
 You can also install this on your computer, however it's a bit pointless as it 
 just runs in a window.
 
-Note: I have tested this on the latest insider preview (Build 14986). No idea 
-whether it works on earlier builds.
+Note: I have tested this on the latest insider preview (Build 14986) and the 
+"Anniversary Update" (Build 14393) and both seem to run fine, however the extra 
+Cortana features do not work on Build 14393.
 
 ## Additional resources
 * [Documentation for the MS example](https://developer.microsoft.com/en-us/windows/iot/samples/iotdefaultapp) 

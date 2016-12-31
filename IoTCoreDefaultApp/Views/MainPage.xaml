@@ -61,6 +61,8 @@
                 <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="56" />
                 <ColumnDefinition Width="Auto" />
@@ -106,11 +108,36 @@
                 </Grid>
             </Button>
 
-            <Button Grid.Column="5" x:Name="SettingsButton" Style="{StaticResource ShutdownButtonStyle}" Content="{StaticResource IconSettings}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SettingsButton_Clicked" Background="Transparent" BorderThickness="0" Height="48" Width="48" />
+            <Button Grid.Column="3" x:Name="Browser" Style="{StaticResource ShutdownButtonStyle}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Click="Browser_Click">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" FontFamily="{StaticResource IconFontFamily}" FontSize="24" Text="{StaticResource IconBrowser}" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Text="Browser" Style="{StaticResource CaptionTextBlockStyle}" TextAlignment="Center" Margin="0,5,0,0"/>
+                </Grid>
+            </Button>
 
-            <Button Grid.Column="7" x:Name="ShutdownButton" Style="{StaticResource ShutdownButtonStyle}" Content="{StaticResource IconShutdown}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ShutdownButton_Clicked" Background="Transparent" BorderThickness="0" Height="48" Width="48" />
 
-            <Popup Grid.Column="7" x:Name="ShutdownDropdown" HorizontalAlignment="Left" IsLightDismissEnabled="True" VerticalOffset="72" Opened="ShutdownDropdown_Opened">
+            <Button Grid.Column="4" x:Name="DeviceManagement" Style="{StaticResource ShutdownButtonStyle}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Click="DeviceManagement_Click">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="Device Management" Style="{StaticResource CaptionTextBlockStyle}" TextAlignment="Center" Margin="0,5,0,0"/>
+                </Grid>
+            </Button>
+
+            <Button Grid.Column="7" x:Name="SettingsButton" Style="{StaticResource ShutdownButtonStyle}" Content="{StaticResource IconSettings}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SettingsButton_Clicked" Background="Transparent" BorderThickness="0" Height="48" Width="48" />
+
+            <Button Grid.Column="9" x:Name="ShutdownButton" Style="{StaticResource ShutdownButtonStyle}" Content="{StaticResource IconShutdown}" FontFamily="{StaticResource IconFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ShutdownButton_Clicked" Background="Transparent" BorderThickness="0" Height="48" Width="48" />
+
+            <Popup Grid.Column="9" x:Name="ShutdownDropdown" HorizontalAlignment="Left" IsLightDismissEnabled="True" VerticalOffset="72" Opened="ShutdownDropdown_Opened">
                 <ListView x:Name="ShutdownListView" Background="White" ItemContainerStyle="{StaticResource IoTCoreDefaultAppShutdownListViewItemStyle}" BorderThickness="2.0" BorderBrush="{StaticResource ShutdownBorderBrush}" ItemClick="ShutdownListView_ItemClick" IsItemClickEnabled="True" IsTabStop="True" >
                     <ListViewItem HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="40" Margin="0,5,0,0" >
                         <TextBlock x:Name="ShutdownOption" Text="{Binding [ShutdownText]}" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource IoTCoreDefaultAppDarkBodyTextBlockStyle}" Margin="20,0,20,0"/>
@@ -192,18 +219,18 @@
                     <TextBlock Grid.Row="0" x:Name="BoardName" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="{StaticResource AccentBrush}" Text="IoTCore Device"/>
 
                     <StackPanel Grid.Row="2">
-						<TextBlock Text="{Binding [MainPageDeviceNameText]}" Style="{StaticResource BaseTextBlockStyle}" />
+                        <TextBlock Text="{Binding [MainPageDeviceNameText]}" Style="{StaticResource BaseTextBlockStyle}" />
                         <TextBlock x:Name="DeviceName" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource PaleTextBrush}" />
-						<TextBlock Text="{Binding [MainPageNetworkText]}" x:Name="NetworkNameCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
+                        <TextBlock Text="{Binding [MainPageNetworkText]}" x:Name="NetworkNameCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
                         <TextBlock x:Name="NetworkName1" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource PaleTextBrush}" />
-						<TextBlock Text="{Binding [MainPageIPAddressText]}" x:Name="IPAddressCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
+                        <TextBlock Text="{Binding [MainPageIPAddressText]}" x:Name="IPAddressCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
                         <TextBlock x:Name="IPAddress1" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource PaleTextBrush}"/>
-						<TextBlock Text="{Binding [MainPageOSVersionText]}" x:Name="OSVersionCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
+                        <TextBlock Text="{Binding [MainPageOSVersionText]}" x:Name="OSVersionCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
                         <TextBlock x:Name="OSVersion" Style="{StaticResource BodyTextBlockStyle}" Foreground="{StaticResource PaleTextBrush}"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="4">
-						<TextBlock Text="{Binding [ConnectedDevicesText]}" Style="{StaticResource BaseTextBlockStyle}" />
+                        <TextBlock Text="{Binding [ConnectedDevicesText]}" Style="{StaticResource BaseTextBlockStyle}" />
                         <ItemsControl x:Name="ConnectedDevices" Foreground="{StaticResource PaleTextBrush}" />
                     </StackPanel>
 

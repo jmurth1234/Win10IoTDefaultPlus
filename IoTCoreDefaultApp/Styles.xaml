@@ -42,8 +42,11 @@
     <x:String x:Key="IconWifi14">&#xE905;</x:String>
     <x:String x:Key="IconWifiNone">&#xE904;</x:String>
     <x:String x:Key="IconBack">&#xE72B;</x:String>
+    <x:String x:Key="IconForward"></x:String>
     <x:String x:Key="IconPrototypingBoard">&#xE959;</x:String>
     <x:String x:Key="IconEducation">&#xE7BE;</x:String>
+    <x:String x:Key="IconClose"></x:String>
+    <x:String x:Key="IconBrowser"></x:String>
 
     <!--Colours-->
     <Color x:Key="AccentColor">#005a98</Color>
